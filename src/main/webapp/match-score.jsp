@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -33,7 +35,6 @@
 <main>
     <div class="container">
         <h1>Current match</h1>
-        <div class="current-match-image"></div>
         <section class="score">
             <table class="table">
                 <thead class="result">
@@ -42,25 +43,36 @@
                     <th class="table-text">Sets</th>
                     <th class="table-text">Games</th>
                     <th class="table-text">Points</th>
+                    <th class="table-text">adv</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr class="player1">
-                    <td class="table-text">Rafael Nadal</td>
-                    <td class="table-text">2</td>
-                    <td class="table-text">4</td>
-                    <td class="table-text">40</td>
+                    <td class="table-text">${match.player1.name}</td>
+                    <td class="table-text">${match.score.scorePlayer1.sets}</td>
+                    <td class="table-text">${match.score.scorePlayer1.games}</td>
+                    <td class="table-text">${match.score.scorePlayer1.points}</td>
+                    <td class="table-text">${match.score.scorePlayer1.hasAdvantage}</td>
                     <td class="table-text">
-                        <div class="score-btn">Score</div>
+                        <form action="${pageContext.request.contextPath}/match-score" method="post">
+                            <input type="hidden" name="uuid" value="${uuid}"/>
+                            <input type="hidden" name="player" value="1"/>
+                            <button type="submit" class="score-btn">Score</button>
+                        </form>
                     </td>
                 </tr>
                 <tr class="player2">
-                    <td class="table-text">Roger Federer</td>
-                    <td class="table-text">2</td>
-                    <td class="table-text">3</td>
-                    <td class="table-text">15</td>
+                    <td class="table-text">${match.player2.name}</td>
+                    <td class="table-text">${match.score.scorePlayer2.sets}</td>
+                    <td class="table-text">${match.score.scorePlayer2.games}</td>
+                    <td class="table-text">${match.score.scorePlayer2.points}</td>
+                    <td class="table-text">${match.score.scorePlayer2.hasAdvantage}</td>
                     <td class="table-text">
-                        <div class="score-btn">Score</div>
+                        <form action="${pageContext.request.contextPath}/match-score" method="post">
+                            <input type="hidden" name="uuid" value="${uuid}"/>
+                            <input type="hidden" name="player" value="2"/>
+                            <button type="submit" class="score-btn">Score</button>
+                        </form>
                     </td>
                 </tr>
                 </tbody>

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -36,11 +38,16 @@
                 <form method="post" action="new-match">
                     <p style="color: red;">Sample error message</p>
                     <label class="label-player" for="playerOne">Player one</label>
-                    <input class="input-player" id="playerOne" placeholder="Name" type="text"
+                    <input class="input-player" id="playerOne" name="playerOne" placeholder="Name" type="text"
                            required title="Enter a name">
+
+
                     <label class="label-player" for="playerTwo">Player two</label>
-                    <input class="input-player" id="playerTwo" placeholder="Name" type="text"
-                    required title="Enter a name">
+                    <input class="input-player" id="playerTwo" name="playerTwo"
+                           placeholder="Name" type="text"
+                           required title="Enter a name">
+
+
                     <input class="form-button" type="submit" value="Start">
                 </form>
             </div>

@@ -14,13 +14,12 @@ public class HibernateUtil {
         if (sessionFactory == null) {
             try {
                 Class.forName("org.h2.Driver");
-                // 1. Загружаем настройки из hibernate.properties
+
                 Configuration configuration = new Configuration();
-//                 2. Регистрируем entity-классы
+
                 configuration.addAnnotatedClass(Player.class);
                 configuration.addAnnotatedClass(Match.class);
-//
-                // 3. Строим SessionFactory
+
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties())
                         .build();
