@@ -24,8 +24,8 @@
         </div>
         <div>
             <nav class="nav-links">
-                <a class="nav-link" href="/">Home</a>
-                <a class="nav-link" href="matches">Matches</a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/">Home</a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/matches">Matches</a>
             </nav>
         </div>
     </section>
@@ -42,7 +42,7 @@
                    type="text" />
 
             <div>
-                <a href="/matches">
+                <a href="${pageContext.request.contextPath}/matches">
                     <button class="btn-filter" type="button">Reset Filter</button>
                 </a>
             </div>
@@ -54,9 +54,9 @@
                     event.preventDefault(); // чтобы не было лишних действий
                     const value = this.value.trim();
                     if (value) {
-                        window.location.href = "/matches?filter_by_name=" + encodeURIComponent(value);
+                        window.location.href = "${pageContext.request.contextPath}/matches?filter_by_name=" + encodeURIComponent(value);
                     } else {
-                        window.location.href = "/matches";
+                        window.location.href = "${pageContext.request.contextPath}/matches";
                     }
                 }
             });

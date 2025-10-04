@@ -2,7 +2,7 @@ package edu.tennis.score.homasapienss.services;
 
 import edu.tennis.score.homasapienss.DAO.MatchDAO;
 import edu.tennis.score.homasapienss.DAO.PlayerDAO;
-import edu.tennis.score.homasapienss.DTO.MatchDTO;
+import edu.tennis.score.homasapienss.DTO.MatchDefinition.MatchDTO;
 import edu.tennis.score.homasapienss.DTO.PaginationDTO;
 import edu.tennis.score.homasapienss.entities.Match;
 import edu.tennis.score.homasapienss.entities.Player;

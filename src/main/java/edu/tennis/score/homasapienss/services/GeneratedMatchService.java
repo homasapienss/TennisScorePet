@@ -1,6 +1,6 @@
 package edu.tennis.score.homasapienss.services;
 
-import edu.tennis.score.homasapienss.DTO.MatchDTO;
+import edu.tennis.score.homasapienss.DTO.MatchDefinition.MatchDTO;
 import edu.tennis.score.homasapienss.DTO.PlayerDTO;
 
 public class GeneratedMatchService {

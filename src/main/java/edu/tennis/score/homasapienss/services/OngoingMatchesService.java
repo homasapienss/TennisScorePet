@@ -1,7 +1,6 @@
 package edu.tennis.score.homasapienss.services;
 
-import edu.tennis.score.homasapienss.DTO.MatchDTO;
-import edu.tennis.score.homasapienss.entities.Match;
+import edu.tennis.score.homasapienss.DTO.MatchDefinition.MatchDTO;
 
 import java.util.Optional;
 import java.util.UUID;

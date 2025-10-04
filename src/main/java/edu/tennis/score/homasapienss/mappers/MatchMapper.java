@@ -1,6 +1,6 @@
 package edu.tennis.score.homasapienss.mappers;
 
-import edu.tennis.score.homasapienss.DTO.MatchDTO;
+import edu.tennis.score.homasapienss.DTO.MatchDefinition.MatchDTO;
 import edu.tennis.score.homasapienss.entities.Match;
 
 public class MatchMapper {

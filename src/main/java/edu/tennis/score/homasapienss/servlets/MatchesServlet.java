@@ -1,6 +1,6 @@
 package edu.tennis.score.homasapienss.servlets;
 
-import edu.tennis.score.homasapienss.DTO.MatchDTO;
+import edu.tennis.score.homasapienss.DTO.MatchDefinition.MatchDTO;
 import edu.tennis.score.homasapienss.DTO.PaginationDTO;
 import edu.tennis.score.homasapienss.services.EndedMatchService;
 import jakarta.servlet.ServletException;
@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @WebServlet("/matches")
 public class MatchesServlet extends HttpServlet {
-    EndedMatchService endedMatchService = new EndedMatchService();
+    private final EndedMatchService endedMatchService = new EndedMatchService();
     private final int PAGE_SIZE = 5;
     @Override protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {

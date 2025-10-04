@@ -1,6 +1,6 @@
 package edu.tennis.score.homasapienss.servlets;
 
-import edu.tennis.score.homasapienss.DTO.MatchDTO;
+import edu.tennis.score.homasapienss.DTO.MatchDefinition.MatchDTO;
 import edu.tennis.score.homasapienss.services.GeneratedMatchService;
 import edu.tennis.score.homasapienss.services.OngoingMatchesService;
 import jakarta.servlet.ServletException;
@@ -14,8 +14,8 @@ import java.util.UUID;
 
 @WebServlet("/new-match")
 public class NewMatchServlet extends HttpServlet {
-    GeneratedMatchService generatedMatchService = new GeneratedMatchService();
-    OngoingMatchesService ongoingMatchesService = OngoingMatchesService.getInstance();
+    private final GeneratedMatchService generatedMatchService = new GeneratedMatchService();
+    private final OngoingMatchesService ongoingMatchesService = OngoingMatchesService.getInstance();
 
     @Override protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {

@@ -26,8 +26,8 @@
         </div>
         <div>
             <nav class="nav-links">
-                <a class="nav-link" href="/">Home</a>
-                <a class="nav-link" href="matches">Matches</a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/">Home</a>
+                <a class="nav-link" href="/matches">Matches</a>
             </nav>
         </div>
     </section>
@@ -51,7 +51,7 @@
                     <td class="table-text">${match.player1.name}</td>
                     <td class="table-text">${match.score.scorePlayer1.sets}</td>
                     <td class="table-text">${match.score.scorePlayer1.games}</td>
-                    <td class="table-text">${match.score.scorePlayer1.points}</td>
+                    <td class="table-text">${match.score.scorePlayer1.points.label}</td>
                     <td class="table-text">${match.score.scorePlayer1.hasAdvantage}</td>
                     <td class="table-text">
                         <form action="${pageContext.request.contextPath}/match-score" method="post">
@@ -65,7 +65,7 @@
                     <td class="table-text">${match.player2.name}</td>
                     <td class="table-text">${match.score.scorePlayer2.sets}</td>
                     <td class="table-text">${match.score.scorePlayer2.games}</td>
-                    <td class="table-text">${match.score.scorePlayer2.points}</td>
+                    <td class="table-text">${match.score.scorePlayer2.points.label}</td>
                     <td class="table-text">${match.score.scorePlayer2.hasAdvantage}</td>
                     <td class="table-text">
                         <form action="${pageContext.request.contextPath}/match-score" method="post">
