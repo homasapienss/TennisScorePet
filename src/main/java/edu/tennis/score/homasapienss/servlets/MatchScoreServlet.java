@@ -1,6 +1,7 @@
 package edu.tennis.score.homasapienss.servlets;
 
 import edu.tennis.score.homasapienss.DTO.MatchDefinition.MatchDTO;
+import edu.tennis.score.homasapienss.exceptions.ApplicationException;
 import edu.tennis.score.homasapienss.services.EndedMatchService;
 import edu.tennis.score.homasapienss.services.MatchScoreService;
 import edu.tennis.score.homasapienss.services.OngoingMatchesService;
@@ -23,7 +24,14 @@ public class MatchScoreServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         var uuid = UUID.fromString(req.getParameter("uuid"));
-        var currentMatch = ongoingMatchesService.getMatch(uuid).orElseThrow(() -> new RuntimeException("Матч не найден"));
+
+        MatchDTO currentMatch = null;
+        try {
+            currentMatch = ongoingMatchesService.getMatch(uuid).orElseThrow(() -> new ApplicationException("Матч не найден"));
+        } catch (ApplicationException e) {
+            req.setAttribute("exceptionMessage", e.getExceptionMessage());
+            req.getRequestDispatcher("exception.jsp").forward(req, resp);
+        }
 
         req.setAttribute("uuid", uuid);
         req.setAttribute("match", currentMatch);
