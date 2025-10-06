@@ -30,6 +30,7 @@ public class NewMatchServlet extends HttpServlet {
             throws ServletException, IOException {
         String name1 = req.getParameter("playerOne");
         String name2 = req.getParameter("playerTwo");
+        lox
         try {
             ValidationUtil.validateNames(name1, name2);
         } catch (ApplicationException e) {
