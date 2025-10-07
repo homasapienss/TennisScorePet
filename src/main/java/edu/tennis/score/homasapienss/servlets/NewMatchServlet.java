@@ -28,8 +28,8 @@ public class NewMatchServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String name1 = req.getParameter("playerOne");
-        String name2 = req.getParameter("playerTwo");
+        String name1 = req.getParameter("playerOne").trim();
+        String name2 = req.getParameter("playerTwo").trim();
         try {
             ValidationUtil.validateNames(name1, name2);
         } catch (ApplicationException e) {
